@@ -6,22 +6,22 @@
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    let mut s = String::from("");
-    let mut flag = 0;
-    for i in input.chars() {
-        if i ==' '&& flag == 0{
-            continue;
-        }else {
-            if flag == 0{
-                flag = 1;
-            }
-            if i == '!'{
-                flag = 0;
-            }
-            s.push(i);
-        }
-    }
-    s
+    let mut s = input.trim();
+    // let mut flag = 0;
+    // for i in input.chars() {
+    //     if i ==' '&& flag == 0{
+    //         continue;
+    //     }else {
+    //         if flag == 0{
+    //             flag = 1;
+    //         }
+    //         if i == '!'{
+    //             flag = 0;
+    //         }
+    //         s.push(i);
+    //     }
+    // }
+    s.to_string()
 }
 
 fn compose_me(input: &str) -> String {
@@ -33,27 +33,27 @@ fn compose_me(input: &str) -> String {
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
-    let mut s = String::from("");
-    let mut temp = String::from("");
-    for i in input.chars() {
-        if i !=' '{
-            temp.push(i);
-        }else{
-            if temp == "cars".to_string(){
-                s.push_str("balloons ");
-                temp.clear();
-            }else{
-                temp.push(' ');
-                s.push_str(&temp[..]);
-                temp.clear();
-            }
-        }
-    }
-    if temp == "cars".to_string(){
-        s.push_str("balloons");
-    }else{
-        s.push_str(&temp[..]);
-    }
+    let mut s = input.to_string().replace("cars","balloons");
+    // let mut temp = String::from("");
+    // for i in input.chars() {
+    //     if i !=' '{
+    //         temp.push(i);
+    //     }else{
+    //         if temp == "cars".to_string(){
+    //             s.push_str("balloons ");
+    //             temp.clear();
+    //         }else{
+    //             temp.push(' ');
+    //             s.push_str(&temp[..]);
+    //             temp.clear();
+    //         }
+    //     }
+    // }
+    // if temp == "cars".to_string(){
+    //     s.push_str("balloons");
+    // }else{
+    //     s.push_str(&temp[..]);
+    // }
     s
 }
 
